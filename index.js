@@ -7,7 +7,7 @@ io.set('transports', [
 	'websocket', 'flashsocket', 'htmlfile', 'xhr-polling', 'jsonp-polling'
 ]);
 
-io.set('origins', 'beta.yoursecondphone.co:443');
+io.set('origins', 'beta.yoursecondphone.co:*');
 
 io.sockets.on('connection', function(socket) {
 	socket.on('join', function(room) {
