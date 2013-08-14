@@ -1,4 +1,8 @@
-var io = require('socket.io').listen(1337);
+var fs = require('fs');
+var io = require('socket.io').listen(1337, {
+	cert: fs.readFileSync('./server.crt'),
+	key: fs.readFileSync('./server.key')
+});
 
 io.enable('browser client etag');
 io.set('log level', 1);
