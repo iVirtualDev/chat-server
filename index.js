@@ -1,4 +1,4 @@
-var io = require('socket.io').listen(9000);
+var io = require('socket.io').listen(1337);
 
 io.enable('browser client etag');
 io.set('log level', 1);
