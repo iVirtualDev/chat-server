@@ -22,8 +22,6 @@ io.sockets.on('connection', function(socket) {
 	});
 
 	socket.on('msg', function(data) {
-		console.log('msg received: ', data);
-
 		if (data === undefined) return;
 		if (data.room === undefined) return;
 		if (data.msg === undefined) return;
