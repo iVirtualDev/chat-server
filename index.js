@@ -1,14 +1,15 @@
 var fs = require('fs');
 var io = require('socket.io').listen(1337, {
 	cert: fs.readFileSync('./server.crt'),
-	key: fs.readFileSync('./server.key')
+	key: fs.readFileSync('./server.key'),
+	ca: fs.readFileSync('./ca.crt')
 });
 
 io.enable('browser client etag');
 io.set('log level', 1);
 
 io.set('transports', [
-	'websocket', 'flashsocket', 'htmlfile', 'xhr-polling', 'jsonp-polling'
+	'websocket', 'htmlfile', 'xhr-polling', 'jsonp-polling'
 ]);
 
 io.set('origins', 'beta.yoursecondphone.co:*');
