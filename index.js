@@ -1,8 +1,8 @@
 var fs = require('fs');
 var io = require('socket.io').listen(1337, {
-	cert: fs.readFileSync('./server.crt'),
-	key: fs.readFileSync('./server.key'),
-	ca: [fs.readFileSync('./AddTrustExternalCARoot.crt'), fs.readFileSync('./PositiveSSLCA2.crt')]
+	cert: fs.readFileSync('./ssl/server.crt'),
+	key: fs.readFileSync('./ssl/server.key'),
+	ca: [fs.readFileSync('./ssl/AddTrustExternalCARoot.crt'), fs.readFileSync('./ssl/PositiveSSLCA2.crt')]
 });
 
 io.enable('browser client etag');
