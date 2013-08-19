@@ -8,5 +8,7 @@
 ehthumbs.db
 Thumbs.db
 
-server.key
-server.crt
+#ignore any certificates or private keys
+./ssl
+*.crt
+*.key
